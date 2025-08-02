@@ -12,15 +12,16 @@ import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, Users, Heart } from "lucide-react";
 import teamMembersk from "@/assets/teamdata/teamdata.json";
 import {
-  PiUsersThreeLight,
-  SiDiscord,
-  SiLinkedin,
-  SiGithub,
-  SiInstagram,
-  PiCodeSimple,
+  Users,
+  Discord,
+  Linkedin,
+  Github,
+  Instagram,
+  Code,
+  Heart,
+  Mail,
 } from "@/components/icons";
 
 /**
@@ -31,7 +32,6 @@ interface TeamMember {
   id: string;
   name: string;
   subname?: string;
-  year: string;
   role?: string;
   email: string;
   github?: string;
@@ -88,7 +88,7 @@ const Team = () => {
       links.push({
         platform: "GitHub",
         url: member.github,
-        icon: SiGithub,
+        icon: Github,
         color: "text-gray-300 hover:text-white",
       });
     }
@@ -98,7 +98,7 @@ const Team = () => {
       links.push({
         platform: "LinkedIn",
         url: member.linkedin,
-        icon: SiLinkedin,
+        icon: Linkedin,
         color: "text-blue-400 hover:text-blue-300",
       });
     }
@@ -108,7 +108,7 @@ const Team = () => {
       links.push({
         platform: "Instagram",
         url: member.instagram,
-        icon: SiInstagram,
+        icon: Instagram,
         color: "text-pink-400 hover:text-pink-300",
       });
     }
@@ -117,7 +117,7 @@ const Team = () => {
       links.push({
         platform: "Discord",
         url: member.discord,
-        icon: SiDiscord,
+        icon: Discord,
         color: "text-indigo-400 hover:text-indigo-300",
       });
     }
@@ -244,7 +244,7 @@ const Team = () => {
                           {anvita.name}
                         </h3>
                         <p className="text-lg text-primary mb-2">Co-founder & Creative Lead</p>
-                        <p className="text-muted-foreground mb-4">{anvita.year}</p>
+                        <p className="text-muted-foreground mb-4"></p>
                         {anvita.bio && (
                           <p className="text-muted-foreground mb-6 italic">
                             {anvita.bio}
@@ -311,7 +311,7 @@ const Team = () => {
                           {founder.subname}
                         </h6>
                         <p className="text-lg text-primary mb-2">{founder.role}</p>
-                        <p className="text-muted-foreground mb-4">{founder.year}</p>
+                        <p className="text-muted-foreground mb-4"></p>
                         {founder.bio && (
                           <p className="text-muted-foreground mb-6 italic">
                             {founder.bio}
@@ -372,7 +372,7 @@ const Team = () => {
                           {avinash.name}
                         </h3>
                         <p className="text-lg text-primary mb-2">Co-founder & Ops Co-Lead</p>
-                        <p className="text-muted-foreground mb-4">{avinash.year}</p>
+                        <p className="text-muted-foreground mb-4"></p>
                         {avinash.bio && (
                           <p className="text-muted-foreground mb-6 italic">
                             {avinash.bio}
@@ -453,7 +453,6 @@ const Team = () => {
                       </h3>
                       <p className="text-sm text-primary mb-2">{member.role}</p>
                       <p className="text-sm text-muted-foreground mb-4">
-                        {member.year}
                       </p>
 
                       {/* Social links */}
@@ -502,7 +501,7 @@ const Team = () => {
             <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               {[
                 {
-                  icon: PiUsersThreeLight,
+                  icon: Users,
                   title: "Collaboration",
                   description:
                     "We believe great things happen when diverse minds work together toward a common goal.",
@@ -514,7 +513,7 @@ const Team = () => {
                     "Everyone deserves equal opportunities to learn, grow, and contribute to the tech community.",
                 },
                 {
-                  icon: PiCodeSimple,
+                  icon: Code,
                   title: "Innovation",
                   description:
                     "We constantly push boundaries and explore new ways to make tech education more accessible.",
@@ -572,7 +571,7 @@ const Team = () => {
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 px-6 py-2 h-11 rounded-md border border-white text-white hover:bg-white hover:text-primary"
                   >
-                    <SiDiscord className="w-5 h-5 mr-2" />
+                    <Discord className="w-5 h-5 mr-2" />
                     Join Discord
                   </a>
                 </div>
