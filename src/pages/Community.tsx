@@ -52,7 +52,7 @@ const Community = () => {
   });
 
   useEffect(() => {
-    fetch("/website/events.json")
+    fetch("/events.json")
       .then((res) => res.json())
       .then((data) => {
         const now = new Date().getTime();
