@@ -1,44 +1,50 @@
-import { Github, Twitter, Linkedin, Instagram, MessageCircle, Mail } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Github , Instagram , Linkedin , Whatsapp, X , Mail, Discord} from "@/components/icons";
+//import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   const footerLinks = {
-    company: [
+    QuickNavigation: [
+      { name: "Home", href: "/" },
       { name: "About", href: "/about" },
-      { name: "Join-us", href: "/join-us" },
-      { name: "Projects", href: "/projects" },
       { name: "Team", href: "/team" },
+      { name: "Join-us", href: "/join-us" },
+      { name: "Contact", href: "/contact" },
+      //{ name: "Projects", href: "/projects" },
+      
     ],
     community: [
       { name: "GitHub", href: "https://github.com/ZenYukti" },
       { name: "Discord", href: "https://discord.gg/HuBa9r33kW" },
+      { name: "Instagram", href: "https://www.instagram.com/zenyukti/" },
       { name: "LinkedIn", href: "https://linkedin.com/company/zenyukti" },
-      { name: "Contact", href: "/contact" },
+      { name: "Whatsapp", href: "https://chat.whatsapp.com/HTwSFGYUNIb6m75IAzCxfk?mode=ac_t" },
     ],
     resources: [
-      { name: "Documentation", href: "#" },
+      //{ name: "Documentation", href: "#" },
       { name: "Contribute", href: "https://github.com/ZenYukti" },
-      { name: "Events", href: "#" },
+      { name: "Events", href: "/community#events" },
       { name: "Community", href: "/community" },
+      { name: "Top Secret", href: "https://shorturl.at/hsdk2 "  },
     ],
   };
 
   const socialLinks = [
     { icon: Github, href: "https://github.com/ZenYukti", label: "GitHub" },
-    { icon: Twitter, href: "https://twitter.com/ZenYukti", label: "Twitter" },
-    { icon: Linkedin, href: "https://linkedin.com/company/zenyukti", label: "LinkedIn" },
+    { icon: Discord, href: "https://discord.gg/HuBa9r33kW", label: "Discord" },
     { icon: Instagram, href: "https://www.instagram.com/zenyukti/", label: "Instagram" },
-    { icon: MessageCircle, href: "https://discord.gg/HuBa9r33kW", label: "Discord" },
-  ];
+    { icon: Whatsapp, href: "https://chat.whatsapp.com/HTwSFGYUNIb6m75IAzCxfk?mode=ac_t", label: "Whatsapp" },
+    { icon: Linkedin, href: "https://linkedin.com/company/zenyukti", label: "LinkedIn" },
+    { icon: X, href: "https://x.com/ZenYukti", label: "Twitter" },
+     ];
 
   return (
     <footer className="bg-darker-surface border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-[1.5fr_1fr_1fr_1fr] gap-x-6 gap-y-6 mb-12">
           {/* Brand Section */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 pr-12">
             <div className="flex items-center space-x-3 mb-6">
               <div className="w-11 h-11 rounded-full overflow-hidden">
                 <img
@@ -52,8 +58,8 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              Student-led tech community enabling members to learn, build, and
-              share.
+                 Student-led tech community enabling members to learn, build, and
+                 share.
             </p>
             <div className="flex items-center space-x-4">
               {socialLinks.map((social, index) => {
@@ -62,7 +68,7 @@ const Footer = () => {
                   <a
                     key={index}
                     href={social.href}
-                    className="w-10 h-10 bg-secondary hover:bg-primary rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 group"
+                    className="w-9 h-9 bg-secondary hover:bg-primary rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 group"
                     aria-label={social.label}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -74,13 +80,13 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Company Links */}
+          {/* QuickNavigation */}
           <div>
             <h3 className="font-semibold text-foreground mb-4">
               Quick Navigation
             </h3>
             <ul className="space-y-3">
-              {footerLinks.company.map((link, index) => (
+              {footerLinks.QuickNavigation.map((link, index) => (
                 <li key={index}>
                   <Link
                     to={link.href}
