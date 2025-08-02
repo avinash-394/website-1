@@ -2,39 +2,39 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Users,Calendar,} from "lucide-react";
-import { SiDiscord ,SiWhatsapp,SiGithub} from "@/components/icons";
+import { Calendar} from "lucide-react";
+import { Discord,Whatsapp,Github,Users, Mentors, Contributors, Usertie, Projects} from "@/components/icons";
 
 const Domains = () => {
   const domains = [
     {
       title: "Members",
-      description: "Join our growing community of passionate learners and builders",
+      description: "Join our growing community of learners and builders. Connect, collaborate, and grow together.",
       icon: Users,
       action: "Join Community",
       links: [
-        { name: "WhatsApp Group", url: "#", icon: SiWhatsapp },
-        { name: "Discord Server", url: "#", icon: SiDiscord }
+        { name: "Join WhatsApp Group", url: "https://chat.whatsapp.com/HTwSFGYUNIb6m75IAzCxfk?mode=ac_t", icon: Whatsapp },
+        { name: "Join Discord Server", url: "https://discord.gg/HuBa9r33kW", icon: Discord }
       ]
     },
     {
-      title: "Active Contributors", 
-      description: "Collaborate on real world projects and build your portfolio",
-      icon: SiGithub,
+      title: "Contributors", 
+      description: "Collaborate on real-world projects, sharpen your skills, and grow your portfolio.",
+      icon: Contributors,
       action: "Start Contributing",
       links: [
-        { name: "GitHub Organization", url: "#", icon: SiGithub },
-        { name: "Project Matching", url: "#", icon: Users }
+        { name: "Explore GitHub ", url: "https://github.com/ZenYukti", icon: Github },
+        { name: "Browse Projects", url: "https://github.com/orgs/ZenYukti/repositories", icon: Projects }
       ]
     },
     {
       title: "Mentors",
-      description: "Learn from experienced professionals and industry experts",
-      icon: Calendar,
+      description: "Share your expertise and empower future innovators through meaningful mentorship",
+      icon: Mentors,
       action: "Apply as Mentor",
       links: [
-        { name: "Mentor Application", url: "#", icon: Users },
-        { name: "Upcoming Sessions", url: "#", icon: Calendar }
+        { name: "Become a Mentor", url: "https://docs.google.com/forms/d/e/1FAIpQLScoy1MfBnFueufYDQ5DRRdJBlQwXWrCcGojO7X3fCY-qRXI0Q/viewform?usp=header",icon: Usertie },
+        { name: "View Upcoming Sessions", url: "https://zenyukti.github.io/#/community#events", icon: Calendar }
       ]
     }
   ];
@@ -87,16 +87,16 @@ const Domains = () => {
                             className="w-full justify-start border-primary/30 text-foreground hover:bg-primary hover:text-white"
                             asChild
                           >
-                            <a href={link.url}>
+                            <a href={link.url} target="_blank"rel="noopener noreferrer">
                               <LinkIcon className="w-4 h-4 mr-2" />
                               {link.name}
                             </a>
                           </Button>
                         );
                       })}
-                      <Button className="w-full bg-gradient-primary hover:opacity-90 text-white">
+                    {/*  <Button className="w-full bg-gradient-primary hover:opacity-90 text-white">
                         {domain.action}
-                      </Button>
+                      </Button> */}
                     </CardContent>
                   </Card>
                 );
@@ -109,16 +109,16 @@ const Domains = () => {
         <section className="py-20 px-4 bg-dark-surface/50">
           <div className="container mx-auto text-center">
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
-              Skills We Work With
+            What We Build With
             </h2>
             <p className="text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Our community spans across multiple domains and technologies
+            From code to creativity—our community explores diverse skills across tech, design, and content creation.
             </p>
             
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
               {[
-                "React", "Node.js", "Python", "UI/UX", "DevOps", "ML/AI",
-                "Flutter", "Blockchain", "Figma", "AWS", "Docker", "GraphQL"
+                "Web Dev","DSA","Linux","ML/AI" , "UI/UX", "Figma", ,
+                "Canva", "Video Editing", "Photography", "Content Writing", "Technical Blogging", "Creative Strategy"
               ].map((skill, index) => (
                 <div
                   key={index}
